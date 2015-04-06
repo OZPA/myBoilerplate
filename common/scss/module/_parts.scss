@@ -1,0 +1,82 @@
+@charset "UTF-8";
+@import "../vars";
+
+//bread crumbs
+.breadCrumbs{
+  // @extend .clearfix;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.breadCrumbs__list{
+  @extend .clearfix;
+  @include mq-pc{
+  @include center-layout;
+  padding: 0 10px;
+}
+  @include mq-tab-smp{
+  padding: 0 10px;
+}
+}
+.breadCrumbs__listItem{
+  float: left;
+  margin-right: 10px;
+  list-style: none;
+  @include fz(11);
+  a{
+    color: $text-color;
+    text-decoration: none;
+    &:after{
+      margin-left: 10px;
+    }
+  }
+}
+
+//banner
+.bannerArea__span img{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.bannerArea--small{
+  @extend .clearfix;
+  .bannerArea__span{
+  float: left;
+    @include mq-pc{
+  width: 25%;
+  padding: 10px;
+}
+  @include mq-smp{
+  width: 50%;
+  padding: 10px;
+}
+  }
+}
+.bannerArea--large{
+  @extend .clearfix;
+  .bannerArea__span{
+  float: left;
+    @include mq-pc{
+  width: 33.33%;
+  padding: 10px;
+}
+  @include mq-smp{
+  width: 100%;
+  margin-bottom: 10px;
+}
+  }
+}
+
+//pageTop
+.pageTop{
+  text-align: center;
+  // line-height: 0.1;
+  cursor: pointer;
+  i{
+    font-size: 4em;
+  }
+  span{
+    font-size: .7em;
+  }
+}

@@ -1,0 +1,54 @@
+@charset "UTF-8";
+@import "../vars";
+
+//footer
+.footer{
+  width: 100%;
+  padding: halfMargin() 0;
+  background: $main-color;
+  @extend .clearfix;
+  color: $white;
+  p{
+    color: $white;
+  }
+  a{
+    color: $white !important;
+  }
+}
+.footer__inner{
+  @include mq-pc{
+    @include center-layout;
+  }
+}
+
+.footer__nav{
+  @extend .clearfix;
+  margin-bottom: halfMargin();
+}
+.footer__nav__list{
+  li{
+    list-style: none;
+  }
+}
+.footer__nav__listItem{
+  float: left;
+  &:after{
+  // padding-left: 10px;
+    content:"｜";
+  }
+  &:last-child:after{
+    content: "";
+  }
+}
+.footer__corpInfo{
+  text-align: center;
+  margin-bottom: 10px;
+}
+.footer__corpName{
+  @include fz(18);
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.footer__copyright{
+  text-align: center;
+}

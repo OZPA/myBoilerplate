@@ -1,0 +1,326 @@
+@charset "UTF-8";
+@import "vars";
+
+// Media Queries
+@mixin mq_pc {
+  @media print, screen and (min-width: $width_smp + 1) {
+    @content;
+  }
+}
+
+@mixin mq-tablet {
+  @media only screen and (min-width: $width-smp) and (max-width: $width-tablet) {
+    @content;
+  }
+}
+
+@mixin mq-smp {
+  @media only screen and (max-width: $width-smp) {
+    @content;
+  }
+}
+
+@mixin mq-tab-smp{
+  @media only screen and(max-width:$width-tablet) {
+    @content;
+  }
+}
+
+//vender prefix
+//box-sizing
+@mixin box-sizing($box-sizing:border-box){
+  -moz-box-sizing: $box-sizing;
+  -webkit-box-sizing: $box-sizing;
+  -o-box-sizing: $box-sizing;
+  -ms-box-sizing: $box-sizing;
+  box-sizing: $box-sizing;
+}
+
+//transition
+@mixin transition($prop:all, $time: 500ms){
+  -webkit-transition: $prop $time;
+  -moz-transition: $prop $time;
+  -ms-transition: $prop $time;
+  -o-transition: $prop $time;
+  transition: $prop $time;
+}
+@mixin transition-duration($speed:300ms){
+  -webkit-transition-duration: $speed;
+  -moz-transition-duration: $speed;
+  -ms-transition-duration: $speed;
+  -o-transition-duration: $speed;
+  transition-duration: $speed;
+}
+@mixin transition-property($property: all){
+  -webkit-transition-property: $property;
+  -moz-transition-property: $property;
+  -ms-transition-property: $property;
+  -o-transition-property: $property;
+  transition-property: $property;
+}
+
+//box-shadow
+@mixin box-shadow($x:0,$y:0,$blur:1px,$color:rgba(0,0,0,.5)){
+  -moz-box-shadow: $x $y $blur $color;
+  -webkit-box-shadow: $x $y $blur $color;
+  -o-box-shadow: $x $y $blur $color;
+  -ms-box-shadow: $x $y $blur $color;
+}
+
+//default margin
+@function halfMargin($value:$margin){
+  @return round($value / 2);
+}
+
+//center layout
+@mixin center-layout($margin-top:0,$margin-bottom:$margin){
+  @include mq-pc{
+  margin: $margin-top auto $margin-bottom auto;
+  width: 100%;
+  max-width: $max-width ;
+  }
+}
+
+@mixin center-box($width:300,$height:300){
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  width: $width;
+  height: $height;
+}
+
+//vertical center
+@mixin vertical-middle{
+  display: table-cell;
+  vertical-align: middle;
+}
+
+//font
+@mixin mincho{font-family: "Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "メイリオ", Meiryo, serif;}
+
+// @mixin mincho{font-family: "Times New Roman", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "游明朝", YuMincho, serif;}
+
+@mixin gothic{font-family: arial, sans-serif, "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;}
+
+// @mixin gothic{font-family: Verdana, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic,  "メイリオ", Meiryo, sans-serif;}
+
+// @mixin gothic{font-family:'Lucida Grande','Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, sans-serif;}
+
+@mixin fz($size){
+  font-size: $size + px;
+  font-size: ($size / 10)*1rem;
+}
+//webfont
+
+
+// Text Replace
+@mixin text-hide {
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  a {
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+// Mouseover Animation
+@mixin hover-effect($speed:700ms, $opacity:0.7) {
+  @include transition-duration($speed);
+  @include transition-property(all);
+  &:hover {
+    opacity:$opacity;
+  }
+}
+
+//gradation
+@mixin gradient($start-color:$light-gray, $end-color:darken($start-color,5%), $orientation: vertical)
+ {
+ background: $start-color;
+ @if $orientation == vertical
+ {
+ // vertical
+ background: -moz-linear-gradient(top,  $start-color 0%, $end-color 100%);
+ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$start-color), color-stop(100%,$end-color));
+ background: -webkit-linear-gradient(top,  $start-color 0%,$end-color 100%);
+ background: -o-linear-gradient(top,  $start-color 0%,$end-color 100%);
+ background: -ms-linear-gradient(top,  $start-color 0%,$end-color 100%);
+ background: linear-gradient(to bottom,  $start-color 0%,$end-color 100%);
+ -ms-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$start-color', endColorstr='$end-color',GradientType=0 );
+ }
+ @else if $orientation == horizontal
+ {
+ // horizontal
+ background: -moz-linear-gradient(left,  $start-color 0%, $end-color 100%);
+ background: -webkit-gradient(linear, left top, right top, color-stop(0%,$start-color), color-stop(100%,$end-color));
+ background: -webkit-linear-gradient(left,  $start-color 0%,$end-color 100%);
+ background: -o-linear-gradient(left,  $start-color 0%,$end-color 100%);
+ background: -ms-linear-gradient(left,  $start-color 0%,$end-color 100%);
+ background: linear-gradient(to right,  $start-color 0%,$end-color 100%);
+ -ms-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$start-color', endColorstr='$end-color',GradientType=1 );
+ }
+ @else
+ {
+ // radial
+ background: -moz-radial-gradient(center, ellipse cover,  $start-color 0%, $end-color 100%);
+ background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,$start-color), color-stop(100%,$end-color));
+ background: -webkit-radial-gradient(center, ellipse cover,  $start-color 0%,$end-color 100%);
+ background: -o-radial-gradient(center, ellipse cover,  $start-color 0%,$end-color 100%);
+ background: -ms-radial-gradient(center, ellipse cover,  $start-color 0%,$end-color 100%);
+ background: radial-gradient(ellipse at center,  $start-color 0%,$end-color 100%);
+ -ms-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$start-color', endColorstr='$end-color',GradientType=1 );
+ }
+ }
+
+
+//rich border
+@mixin line-top($op1: .2, $op2: .3){
+  border-top: 1px solid rgba(0, 0, 0, $op1);
+  @include box-shadow(rgba(255, 255, 255, $op2) 0 1px 0 inset);
+}
+@mixin line-bottom($op1: .2, $op2: .3){
+  border-bottom: 1px solid rgba(0, 0, 0, $op1);
+  @include box-shadow(rgba(255, 255, 255, $op2)0 1px 0);
+}
+@mixin line-left($op1: .2, $op2: .3){
+  border-left: 1px solid rgba(0, 0, 0, $op1);
+  @include box-shadow (rgba(255, 255, 255, $op2) -1px 0 0);
+}
+@mixin line-right($op1: .2, $op2: .3){
+  border-right: 1px solid rgba(0, 0, 0, $op1);
+  @include box-shadow(rgba(255, 255, 255, $op2) -1px 0 0 inset);
+}
+
+//text shadow
+@mixin ts-black($op : .2){
+  text-shadow: 1px -1px rgba(0, 0, 0, $op);
+}
+@mixin ts-white($op : .5){
+  text-shadow: -1px 1px rgba(255, 255, 255, $op);
+}
+
+//box
+@mixin zurui-box($shadow: 0.15) {
+  @include box-shadow(rgba(0, 0, 0, $shadow) 0 0 2px);
+}
+@mixin rich-box($shadow: .2){
+  @include box-shadow(rgba(0, 0, 0, $shadow) 0 0 0 2px inset);
+}
+@mixin deboss-box($border: .1, $shadow: .05, $highlight: .8) {
+  border: 1px solid rgba(0,0,0,$border);
+  @include box-shadow(rgba(0,0,0,$shadow) -1px 1px 2px inset, rgba(255,255,255,$highlight) -1px 1px 0);
+}
+@mixin emboss-box($border: .1, $shadow: .05, $highlight: .5) {
+  border: 1px solid rgba(0, 0, 0, $border);
+  @include box-shadow(rgba(0, 0, 0, $shadow) -1px 1px 0, rgba(255, 255, 255, $highlight) -1px 1px 0 inset);
+}
+
+//balloon
+@mixin balloon-left($size: 6px, $color: #FFF, $top: 6px){
+  position: relative;
+  &:after{
+    position: absolute ;
+    content :"";
+    display: block ;
+    border: $size solid transparent ;
+    border-right: $size solid $color ;
+    top: $top ;
+    left: -1 * $size * 2 ;
+  }
+}
+@mixin balloon-left-border($size:6px,$color:#fff,$top:6px,$border-color:#ccc,$border:1px){
+  position:relative;
+  $size2 : $size + $border;
+  @include balloon-left($size,$color,$top);
+    &:before{
+    position:absolute;
+    content:"";
+    display:block;
+    border:$size2 solid transparent;
+    border-right:$size2 solid $border-color;
+    top:$top - $border;
+    left: -1 * $size2 * 2;
+  }
+}
+@mixin balloon-right($size: 6px, $color: #FFF, $top: 6px){
+  position: relative;
+  &:after{
+    position: absolute ;
+    content :"";
+    display: block ;
+    border: $size solid transparent ;
+    border-right: $size solid $color ;
+    top: $top ;
+    right: -1 * $size * 2 ;
+  }
+}
+@mixin balloon-right-border($size:6px,$color:#fff,$top:6px,$border-color:#ccc,$border:1px){
+  position:relative;
+  $size2 : $size + $border;
+  @include balloon-right($size,$color,$top);
+    &:before{
+    position:absolute;
+    content:"";
+    display:block;
+    border:$size2 solid transparent;
+    border-right:$size2 solid $border-color;
+    top:$top - $border;
+    right: -1 * $size2 * 2;
+  }
+}
+@mixin balloon-top($size: 6px, $color: #FFF, $left: 6px){
+  position: relative;
+  &:after{
+    position: absolute ;
+    content :"";
+    display: block ;
+    border: $size solid transparent ;
+    border-bottom: $size solid $color ;
+    top:-1 * $size * 2;
+    left: $left;
+  }
+}
+@mixin balloon-top-border($size:6px,$color:#fff,$top:6px,$border-color:#ccc,$border:1px){
+  position:relative;
+  $size2 : $size + $border;
+  @include balloon-top($size,$color,$top);
+  &:before{
+    position:absolute;
+    content:"";
+    display:block;
+    border:$size2 solid transparent;
+    border-bottom:$size2 solid $border-color;
+    top:-1 * $size * 2;
+    left: $left;
+  }
+}
+@mixin balloon-bottom($size: 6px, $color: #FFF, $left: 6px){
+  position: relative;
+  &:after{
+    position: absolute ;
+    content :"";
+    display: block ;
+    border: $size solid transparent ;
+    border-top: $size solid $color ;
+    bottom:-1 * $size * 2;
+    left: $left;
+  }
+}
+@mixin balloon-bottom-border($size:6px,$color:#fff,$top:6px,$border-color:#ccc,$border:1px){
+  position:relative;
+  $size2 : $size + $border;
+  @include balloon-bottom($size,$color,$top);
+  &:before{
+    position:absolute;
+    content:"";
+    display:block;
+    border:$size2 solid transparent;
+    border-top:$size2 solid $border-color;
+    bottom:-1 * $size * 2;
+    left: $left;
+  }
+}

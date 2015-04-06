@@ -1,0 +1,34 @@
+@charset "UTF-8";
+@import "../vars";
+
+.contentsArea{
+  @extend .clearfix;
+  @include mq-pc{
+    @include center-layout;
+    padding: 0 10px;
+}
+  @include mq-tab-smp{
+  padding: 0 10px;
+}
+}
+.section{
+  @extend .clearfix;
+  @include center-layout;
+  @include mq-tab-smp{
+  margin-bottom: $margin;
+}
+}
+.section--box{
+  border: 1px solid $light-gray;
+  padding: 10px;
+}
+.span--box{
+  border: 1px solid $light-gray;
+  padding: 5px;
+}
+.spanBox__title{
+  padding: 0 5px;
+  border: 1px solid $text-color;
+  text-align: center;
+  margin: 10px 0;
+}

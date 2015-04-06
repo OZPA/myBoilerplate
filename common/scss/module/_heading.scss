@@ -1,0 +1,17 @@
+@charset "UTF-8";
+@import "../vars";
+
+.pageTitle{
+  @include fz(26);
+  margin-bottom: halfMargin();
+  // padding-bottom: 10px;
+  border-bottom: 1px solid $light-gray;
+}
+.sectionHeading--h2{
+  @include fz(18);
+  margin-bottom: 15px;
+}
+.sectionHeading--h3{
+  @include fz(16);
+  margin-bottom: 15px;
+}

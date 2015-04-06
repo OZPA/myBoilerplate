@@ -1,0 +1,22 @@
+@charset "UTF-8";
+@import "../vars";
+
+// p
+.sectionText{
+  +.sectionText{
+    margin-top: halfMargin();
+  }
+}
+.sectionText--small{
+  @extend .sectionText;
+  @include fz(12);
+}
+.captionText{
+  @include fz(11);
+  text-align: center;
+}
+
+// strong
+.strong{
+  font-weight: bold;
+}

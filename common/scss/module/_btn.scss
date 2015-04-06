@@ -1,0 +1,41 @@
+@charset "UTF-8";
+@import "../vars";
+
+.btn {
+  background-color: $btn-color;
+  border: none;
+  color: $white;
+  display: inline-block;
+  padding: 0.7em 1.5em 0.5em 1.5em;
+  text-align: center;
+  text-decoration: none !important;
+  border: 1px solid $btn-color;
+  border-radius: 5px;
+  @include hover-effect;
+  &.btn--s {
+    font-size: 60%;
+    padding-top: 0.8em;
+    padding-bottom: 0.6em;
+    border-radius: 3px;
+  }
+  &.btn--l {
+    font-size: 140%;
+    padding-top: 0.6em;
+    padding-bottom: 0.5em;
+    border-radius: 8px;
+  }
+  &.btn--xl {
+    font-size: 200%;
+    padding-top: 0.5em;
+    padding-bottom: 0.4em;
+    border-radius: 10px;
+  }
+  &:hover {
+    color: $btn-color;
+    background: $white;
+    border: 1px solid $btn-color;
+  }
+}
+.btn--inquiry{
+  @extend .btn;
+}
