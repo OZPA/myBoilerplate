@@ -14,15 +14,12 @@
 <?
 $lastname=$_POST['lastname'];
 $firstname=$_POST['firstname'];
-$fullname=$lastname.$firstname;
 $lastnamekana=$_POST['lastnamekana'];
 $firstnamekana=$_POST['firstnamekana'];
-$fullnamekana=$lastnamekana.$firstnamekana;
 $zip=$_POST['zip'];
 $pref=$_POST['pref'];
 $address2=$_POST['address2'];
 $address3=$_POST['address3'];
-	$jyusyo=$pref.$address2.$address3;
 $tel=$_POST['tel'];
 $fax=$_POST['fax'];
 $email=$_POST['email'];
@@ -42,16 +39,16 @@ $head2 = "FROM:$email";
 
 $ml_title = "サイト名！！フォームより".$fm_name."を承りました。";
 
-$reply_h .= "$fullname 様\n";
+$reply_h .= "$lastname$firstname 様\n";
 $reply_h .= "お問い合わせいただき誠にありがとうございました。\n";
 $reply_h .= "\n";
 $reply_h .= "以下は、お客様が入力された情報です。\n";
 $reply_h .= "---------------------------------------------------------------------------\n";
 $reply_b .= "ご注文内容　　　：　$checkbox\n";
-$reply_b .= "お名前　　　　　：　$fullname\n";
-$reply_b .= "ふりがな　　　　：　$fullnamekana\n";
+$reply_b .= "お名前　　　　　：　$lastname$firstname\n";
+$reply_b .= "ふりがな　　　　：　$lastnamekana$firstnamekana\n";
 $reply_b .= "郵便番号　　　　：　$zip\n";
-$reply_b .= "住　所　　　　　：　$jyusyo\n";
+$reply_b .= "住　所　　　　　：　$pref$address2$address3\n";
 $reply_b .= "電話番号　　　　：　$tel\n";
 $reply_b .= "ＦＡＸ番号　　　：　$fax\n";
 $reply_b .= "メールアドレス　：　$email\n";

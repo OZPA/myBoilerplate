@@ -127,7 +127,7 @@
       }
     ],
     chkcheckbox: [
-      "ご注文を選択してください",
+      "選択してください",
       function(txt, t) {
         return $("input:checked",t).length>0;
       }
