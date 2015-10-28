@@ -25,7 +25,7 @@ $fax=$_POST['fax'];
 $email=$_POST['email'];
 $checkbox=$_POST['checkbox'];
 $radio=$_POST['radio'];
-$bikou=$_POST['bikou'];
+$naiyou=$_POST['naiyou'];
 //print_r($_POST);
 
 
@@ -52,8 +52,9 @@ $reply_b .= "住　所　　　　　：　$pref$address2$address3\n";
 $reply_b .= "電話番号　　　　：　$tel\n";
 $reply_b .= "ＦＡＸ番号　　　：　$fax\n";
 $reply_b .= "メールアドレス　：　$email\n";
-$reply_b .= "$radio\n";
-$reply_b .= "$bikou\n";
+$reply_b .= "ラジオ　　　　　：　$radio\n";
+$reply_b .= "お問い合わせ内容：\n";
+$reply_b .= "$naiyou\n";
 $reply_b .= "---------------------------------------------------------------------------\n";
 $reply_b .= "ご不明な点がございましたら、下記までお問い合わせください。\n";
 $reply_b .= "サイト名\n";
@@ -80,7 +81,7 @@ if($email !=""){
 }
 
 ?>
-<body>
+<body class="body body--articlePage body--inquiry">
 
 <p>お問い合わせ頂き誠にありがとうございました。</p>
 <p><?=$ml_title?><br />

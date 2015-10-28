@@ -139,7 +139,7 @@
 }
 }
 
-.globalNav__listItem{
+.globalNav__list__item{
   list-style: none;
   a{
     text-align: center;
@@ -165,7 +165,7 @@
   padding: 10px 0;
 }
 }
-.globalNav__listItem--half{
+.globalNav__list__item--half{
   @include mq-pc{
   display: none;
 }

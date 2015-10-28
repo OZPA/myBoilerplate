@@ -15,7 +15,7 @@
 <script type="text/javascript" src="../common/exValidation-master/scripts/exvalidation.js"></script>
 <script type="text/javascript" src="../common/exValidation-master/scripts/exchecker-ja.js"></script>
 </head>
-<body>
+<body class="body body--articlePage body--inquiry">
 
 <form id="toi" name="toi" action="inquiry-send.php" onsubmit="return Checkform()" method="post">
 <p>下記内容が、お客様が入力された内容です。<br />お間違えの無いことをご確認の上、送信ボタンをクリックして下さい。</p>
@@ -33,7 +33,7 @@ $address3=$_POST['address3'];
 $tel=$_POST['tel'];
 $fax=$_POST['fax'];
 $email=$_POST['email'];
-$bikou=$_POST['bikou'];
+$naiyou=$_POST['naiyou'];
 //print_r($_POST);
 //?>
 <table class="table--inquiry">
@@ -95,12 +95,12 @@ $bikou=$_POST['bikou'];
     <td><?=$email?><input type="hidden" name="email" value="<?=$email?>"></td>
   </tr>
     <tr>
-    <td>お問合せ</td>
+    <td>ラジオ</td>
     <td><?=$radio?><input type="hidden" name="radio" value="<?=$radio?>"></td>
   </tr>
   <tr>
-    <td>備考</td>
-    <td><textarea name="bikou" wrap="soft" cols="50" rows="8" readonly><?=$bikou?></textarea></td>
+    <td>お問い合わせ内容</td>
+    <td><textarea name="naiyou" wrap="soft" cols="50" rows="8" readonly><?=$naiyou?></textarea></td>
   </tr>
 </table>
         <input type="submit" value="送信" id="submit-button">

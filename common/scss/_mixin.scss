@@ -8,6 +8,12 @@
   }
 }
 
+@mixin mq-pc-mid{
+    @media only screen and (min-width: $width-tablet) and (max-width: $width-pc ) {
+    @content;
+  }
+}
+
 @mixin mq-tablet {
   @media only screen and (min-width: $width-smp) and (max-width: $width-tablet) {
     @content;

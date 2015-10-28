@@ -15,7 +15,7 @@
 <script type="text/javascript" src="../common/exValidation-master/scripts/exvalidation.js"></script>
 <script type="text/javascript" src="../common/exValidation-master/scripts/exchecker-ja.js"></script>
 </head>
-<body>
+<body class="body body--articlePage body--inquiry">
 
 <form id="toi" name="toi" action="inquiry-view.php" onsubmit="" method="post">
 <div id="checkbox">
@@ -146,24 +146,24 @@
           <td><input type="text" name="email" id="email" value="" size="30" ></td>
         </tr>
         <tr>
-          <td><span class="inquiry__text--required">※</span>お申込み会員区分</td>
+          <td><span class="inquiry__text--required">※</span>ラジオ</td>
           <td>
             <ol id="radio">
-          <li><label for="inq01" id="inq01_label" class="mfp"><input type="radio" name="radio" id="inq01" value="カタログのご請求" class="mfp" />
-          カタログのご請求</label>
+          <li><label for="inq01" id="inq01_label" class="mfp"><input type="radio" name="radio" id="inq01" value="選択1" class="mfp" />
+          選択1</label>
           </li>
-          <li><label for="inq02" id="inq02_label" class="mfp"><input type="radio" name="radio" id="inq02" value="製品に関する問合せ" class="mfp" />
-          製品に関する問合せ（価格、仕様）</label>
+          <li><label for="inq02" id="inq02_label" class="mfp"><input type="radio" name="radio" id="inq02" value="選択2" class="mfp" />
+          選択2</label>
           </li>
-          <li><label for="inq03" id="inq03_label" class="mfp"><input type="radio" name="radio" id="inq03" value="技術に関する問合せ" class="mfp" />
-          技術に関する問合せ（操作、取扱い等）</label>
+          <li><label for="inq03" id="inq03_label" class="mfp"><input type="radio" name="radio" id="inq03" value="選択3" class="mfp" />
+          選択3</label>
           </li>
           </ol>
           </td>
           </tr>
             <tr>
-          <td>備考</td>
-          <td><textarea name="bikou" id="bikou" wrap="soft" cols="50" rows="8"></textarea></td>
+          <td>お問い合わせ内容</td>
+          <td><textarea name="naiyou" id="naiyou" wrap="soft" cols="50" rows="8"></textarea></td>
         </tr>
       </table>
 
