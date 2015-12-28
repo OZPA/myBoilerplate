@@ -406,4 +406,8 @@ a:active { text-decoration: none; }
 .btn.btn--xl, .btn--xl.btn--inquiry { font-size: 200%; padding-top: 0.5em; padding-bottom: 0.4em; border-radius: 10px; }
 .btn:hover, .btn--inquiry:hover { color: #d35400; background: #fff; border: 1px solid #d35400; }
 
+input[type="text"] { border: none; border-radius: 0px; -webkit-appearance: none; padding: 5px; }
+
+textarea { resize: none; max-width: 100%; width: 100%; }
+
 /*# sourceMappingURL=style.css.map */

@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="description" content="">
   <meta name="keywords" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes" />
   <link rel="canonical" href="" />
   <title>お問い合わせ内容確認｜サイト名</title>
   <link rel="stylesheet" href="../common/css/style.css">
@@ -28,12 +29,15 @@ $lastnamekana=$_POST['lastnamekana'];
 $firstnamekana=$_POST['firstnamekana'];
 $zip=$_POST['zip'];
 $pref=$_POST['pref'];
-$address2=$_POST['address2'];
-$address3=$_POST['address3'];
+$address22 = $_POST["address2"];
+$address2 = mb_convert_kana($address22,"sKV","UTF-8");
+$address32 = $_POST["address3"];
+$address3 = mb_convert_kana($address32,"sKV","UTF-8");
 $tel=$_POST['tel'];
 $fax=$_POST['fax'];
 $email=$_POST['email'];
-$naiyou=$_POST['naiyou'];
+$naiyou2 = $_POST["naiyou"];
+$naiyou = mb_convert_kana($naiyou2,"sKV","UTF-8");
 //print_r($_POST);
 //?>
 <table class="table--inquiry">

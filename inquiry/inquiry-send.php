@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="description" content="">
   <meta name="keywords" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes" />
   <link rel="canonical" href="" />
   <title>お問い合わせ頂き誠にありがとうございました｜サイト名</title>
   <link rel="stylesheet" href="../common/css/style.css">
@@ -31,7 +32,7 @@ $naiyou=$_POST['naiyou'];
 
 //宛先＆FROM設定
 $fm_name="お問い合わせ";
-$mad = "メールアドレス";
+$mad = "hase0023@gmail.com";
 $mad1 = "メールアドレス";
 
 $head = "FROM:$mad";
