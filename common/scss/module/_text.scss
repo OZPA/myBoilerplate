@@ -2,13 +2,13 @@
 @import "../vars";
 
 // p
-.sectionText{
-  +.sectionText{
+.paragraph{
+  +.paragraph{
     margin-top: halfMargin();
   }
 }
-.sectionText--small{
-  @extend .sectionText;
+.paragraph--small{
+  @extend .paragraph;
   @include fz(12);
 }
 .captionText{

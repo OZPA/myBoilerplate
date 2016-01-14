@@ -1,6 +1,10 @@
 @charset "UTF-8";
 @import "../vars";
 
+.wrapper{
+  @extend .clearfix;
+  width: 100%;
+}
 .contentsArea{
   @extend .clearfix;
   @include mq-pc{

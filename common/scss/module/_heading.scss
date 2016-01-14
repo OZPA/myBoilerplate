@@ -1,17 +1,21 @@
 @charset "UTF-8";
 @import "../vars";
 
+// 主にh1に使用
 .pageTitle{
   @include fz(26);
   margin-bottom: halfMargin();
   // padding-bottom: 10px;
   border-bottom: 1px solid $light-gray;
 }
-.sectionHeading--h2{
+
+// h2
+.sectionHeading{
   @include fz(18);
   margin-bottom: 15px;
 }
-.sectionHeading--h3{
+//h3
+.sectionSubHeading{
   @include fz(16);
   margin-bottom: 15px;
 }

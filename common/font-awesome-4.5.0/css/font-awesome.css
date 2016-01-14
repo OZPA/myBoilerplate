@@ -11,7 +11,8 @@
   font-weight: normal;
   font-style: normal;
 }
-.fa {
+.fa,
+.breadCrumbs__listItem a::after {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
@@ -908,7 +909,7 @@
 .fa-angle-left:before {
   content: "\f104";
 }
-.fa-angle-right:before {
+.fa-angle-right:before,.breadCrumbs__listItem a::after {
   content: "\f105";
 }
 .fa-angle-up:before {

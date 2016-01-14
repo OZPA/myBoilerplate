@@ -25,12 +25,12 @@
   @extend .clearfix;
   margin-bottom: halfMargin();
 }
-.footer__nav__list{
+.footerNav__list{
   li{
     list-style: none;
   }
 }
-.footer__nav__list__item{
+.footerNav__listItem{
   float: left;
   &:after{
   // padding-left: 10px;
